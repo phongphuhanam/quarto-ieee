@@ -1,7 +1,7 @@
 title: IEEE Transaction
 author: David Folio
 version: 1.1.0
-quarto-required: ">=1.3.0"
+quarto-required: '>=1.3.0'
 contributes:
   formats:
     common:
@@ -23,18 +23,22 @@ contributes:
         eq-labels: (roman)
         fig-title: Fig.
         fig-prefix: Fig.
-      cite-method: citeproc
+      # cite-method: citeproc
       csl: ieee-with-url.csl
-      #cite-method: biblatex
+      # cite-method: biblatex
       link-citations: true
       execute:
         echo: false
         warning: false
         freeze: true
+    docx:
+      cite-method: citeproc
+      csl: ieee-with-url.csl
     pdf:
       pdf-engine: pdflatex
       keep-tex: true
       toc: false
+      cite-method: biblatex
       df-print: kable
       latex-auto-install: true
       template: ieee-template.tex
@@ -56,25 +60,22 @@ contributes:
     html:
       toc: true
       toc-location: left
-      toc-title: "Document Sections"
+      toc-title: Document Sections
       code-fold: true
       theme:
         - styles.scss
-
       template: partials/ieee-template.html
       template-partials:
-         - partials/title-block.html
-         - partials/title-metadata.html
-         - partials/author.html
-         - partials/after-body.html
-         - partials/affiliation.tex
+        - partials/title-block.html
+        - partials/title-metadata.html
+        - partials/author.html
+        - partials/after-body.html
+        - partials/affiliation.tex
       include-in-header: partials/mathjax.html
       html-math-method:
         method: mathjax
-      date-format: "D MMMM YYYY"
+      date-format: D MMMM YYYY
       google-scholar: true
       refs: |
-         ::: {#refs}
-         :::
-
-
+        ::: {#refs}
+        :::
